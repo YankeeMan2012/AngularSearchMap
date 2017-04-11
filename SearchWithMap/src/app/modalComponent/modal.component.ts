@@ -44,7 +44,6 @@ export class ModalComponent implements OnInit {
 
     private pickHint(lat: number, lng: number): void {
         this.setMapData(lat, lng);
-        this.removeHints();
     }
 
     private setMapData(lat: number, lng: number): void {

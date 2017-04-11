@@ -6,6 +6,7 @@
 
 <div class="searchBox">
     <input type="text" (input)="getHints(locationText)" [(ngModel)]="locationText" placeholder="Address" />
+    <div class="clear" (click)="removeHints()"></div>
     <ul>
         <li *ngFor="let hint of hints" (click)="pickHint(hint.lat, hint.lng)">{{hint.address}}</li>
     </ul>

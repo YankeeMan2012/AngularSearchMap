@@ -1,0 +1,4 @@
+<button (click)="showSearchModal()">SET POINT FOR SORT FROM</button>
+<p *ngIf="firstVisit">Picked latitude: {{lat}} longitude: {{lng}}</p>
+<modal-app *ngIf="showModal" [(lat)]="lat" [(lng)]="lng" (saveData)="saveData($event)"></modal-app>
+

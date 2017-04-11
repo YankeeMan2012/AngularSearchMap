@@ -1,0 +1,15 @@
+<sebm-google-map [latitude]="map.cLat" [longitude]="map.cLng" (mapClick)="mapClicked($event)">
+    <sebm-google-map-marker [latitude]="map.mLat" [longitude]="map.mLng"></sebm-google-map-marker>
+</sebm-google-map>
+
+<button class="btn getMyLocation" (click)="myLatLng()">Get My Location</button>
+
+<div class="searchBox">
+    <input type="text" (input)="getHints(locationText)" [(ngModel)]="locationText" placeholder="Address" />
+    <ul>
+        <li *ngFor="let hint of hints" (click)="pickHint(hint.lat, hint.lng)">{{hint.address}}</li>
+    </ul>
+</div>
+
+<button class="btn saveLocation" (click)="saveLocation()">Save Location</button>
+
